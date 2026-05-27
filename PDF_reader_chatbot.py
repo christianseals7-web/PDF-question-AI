@@ -4,7 +4,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_groq import ChatGroq
 from langchain_community.embeddings import HuggingFaceEmbeddings
-from langchain_community.vectorstores import Chroma
+from langchain_community.vectorstores import FAISS
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -71,7 +71,7 @@ if uploaded_file:
             # Create the Vector Store
             # Converts text into numbers so the AI can search them
             embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
-            st.session_state.vector_db = Chroma.from_documents(chunks, embeddings)
+            st.session_state.vector_db = FAISS.from_documents(chunks, embeddings)
 
             # Track which file has been processed and reset chat for new doc
             st.session_state.last_uploaded_file = uploaded_file.name
