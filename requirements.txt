@@ -8,3 +8,5 @@ sentence-transformers
 faiss-cpu
 pypdf
 python-dotenv
+groq>=0.31.0
+langchain-groq>=0.3.0
