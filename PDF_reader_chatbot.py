@@ -97,7 +97,7 @@ if uploaded_file:
         # Build and run the RAG chain, then display the response
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
-                llm = ChatGroq(model = "llama-3.3-70b-versatile", groq_api_key=api_key) 
+                llm = ChatGroq(model = "openai/gpt-oss-120b", groq_api_key=api_key) 
                 prompt = ChatPromptTemplate.from_template("""
                 Answer the question based on the context below.
                 Context: {context}
