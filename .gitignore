@@ -1,0 +1,10 @@
+# Secrets — never commit these
+.env
+.streamlit/secrets.toml
+
+# Local leftovers
+temp.pdf
+__pycache__/
+*.pyc
+venv/
+.venv/
